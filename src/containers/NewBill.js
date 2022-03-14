@@ -12,6 +12,7 @@ export default class NewBill {
     file.addEventListener("change", this.handleChangeFile)
     this.fileUrl = null
     this.fileName = null
+    this.fileExtension = null
     this.billId = null
     new Logout({ document, localStorage, onNavigate })
   }
@@ -20,6 +21,7 @@ export default class NewBill {
     const file = this.document.querySelector(`input[data-testid="file"]`).files[0]
     const filePath = e.target.value.split(/\\/g)
     const fileName = filePath[filePath.length-1]
+    const fileExtension = file.type
     const formData = new FormData()
     const email = JSON.parse(localStorage.getItem("user")).email
     formData.append('file', file)
@@ -38,6 +40,7 @@ export default class NewBill {
         this.billId = key
         this.fileUrl = fileUrl
         this.fileName = fileName
+        this.fileExtension = fileExtension
       }).catch(error => console.error(error))
   }
   handleSubmit = e => {
@@ -55,10 +58,15 @@ export default class NewBill {
       commentary: e.target.querySelector(`textarea[data-testid="commentary"]`).value,
       fileUrl: this.fileUrl,
       fileName: this.fileName,
+      fileExtension: this.fileExtension,
       status: 'pending'
     }
-    this.updateBill(bill)
-    this.onNavigate(ROUTES_PATH['Bills'])
+    if (this.fileExtension == "image/jpeg" || this.fileExtension == "image/png") {
+      this.updateBill(bill)
+      this.onNavigate(ROUTES_PATH['Bills'])
+    } else {
+      alert("Format du justificatif invalide ! Format accepté : .png .jpeg .jpg")
+    }
   }
 
   // not need to cover this function by tests
