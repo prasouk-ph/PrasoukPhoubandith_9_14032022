@@ -9,10 +9,10 @@ import NewBill from "../containers/NewBill.js"
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on NewBill Page", () => {
-    test("Then ...", () => {
+    test("Then it should render a form", () => {
       const html = NewBillUI()
       document.body.innerHTML = html
-      //to-do write assertion
+      expect(screen.getByTestId("form-new-bill")).toBeTruthy();
     })
   })
 })
