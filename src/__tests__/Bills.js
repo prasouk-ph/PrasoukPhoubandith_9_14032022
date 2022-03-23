@@ -6,8 +6,8 @@ import {screen, waitFor} from "@testing-library/dom"
 import BillsUI from "../views/BillsUI.js"
 import { bills } from "../fixtures/bills.js"
 import { ROUTES_PATH} from "../constants/routes.js";
-import {localStorageMock} from "../__mocks__/localStorage.js";
-
+import { localStorageMock } from "../__mocks__/localStorage.js";
+import userEvent from '@testing-library/user-event'
 import router from "../app/Router.js";
 
 describe("Given I am connected as an employee", () => {
@@ -38,7 +38,6 @@ describe("Given I am connected as an employee", () => {
 
   describe("When I click on eye icon", () => {
     test("Then a modal with the bill proof in it should pop up", () => {
-
     })
   })
 })
