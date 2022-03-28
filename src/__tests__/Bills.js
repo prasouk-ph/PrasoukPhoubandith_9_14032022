@@ -41,8 +41,32 @@ describe("Given I am connected as an employee", () => {
     })
   })
 
+  // describe('Given I am connected as an employee',()=>{
+  //   describe('When I am on Bill Page',()=>{
+  //    test('Then return bills data', () => {
+  //      mockStore.bills = jest.fn().mockImplementationOnce(() => {
+  //        return {
+  //          list: jest.fn().mockResolvedValue([{ id: 1, data: () => ({ date: '' }) }])
+  //        }
+  //      })
+ 
+  //      const bills = new Bills({
+  //        document, onNavigate, store: mockStore, localStorage
+  //      })
+ 
+  //      const response = bills.getBills()
+ 
+  //      expect(response).toEqual(Promise.resolve({}))
+  //    })
+  //   })
+  // })
+
   describe("When I click on eye icon", () => {
     test("Then a modal with the bill proof in it should pop up", () => {
+      const onNavigate = (pathname) => {
+        document.body.innerHTML = ROUTES({ pathname })
+      }
+      
       const bill = new Bills({
         document, onNavigate, store: null, localStorage: window.localStorage
       })
@@ -141,7 +165,7 @@ describe("Given I am a user connected as Employee", () => {
       root.setAttribute("id", "root")
       document.body.append(root)
       router()
-      window.onNavigate(ROUTES_PATH.Dashboard)
+      window.onNavigate(ROUTES_PATH.Bills)
 
       document.body.innerHTML = BillsUI({ data: bills })
       
