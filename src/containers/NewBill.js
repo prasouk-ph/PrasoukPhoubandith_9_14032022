@@ -45,7 +45,7 @@ export default class NewBill {
         }).catch(error => console.error(error))
     } else {
       alert("Format du justificatif invalide ! Format accepté : .png .jpeg .jpg")
-      this.document.querySelector(`input[data-testid="file"]`).value = ""
+      this.document.querySelector(`input[data-testid="file"]`).value = "" // prevent form to be submit
     }
   }
   handleSubmit = e => {
