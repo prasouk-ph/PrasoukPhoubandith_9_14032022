@@ -11,7 +11,6 @@ import { localStorageMock } from "../__mocks__/localStorage.js";
 import mockStore from "../__mocks__/store"
 import { bills } from "../fixtures/bills.js"
 import router from "../app/Router";
-import '@testing-library/jest-dom' // allows to use toHaveClass and more expect methods
 
 jest.mock("../app/store", () => mockStore)
 
@@ -42,7 +41,7 @@ describe("Given I am connected as an employee", () => {
   })
 
   describe("When I click on eye icon", () => {
-    test("Then a modal with the bill proof in it should pop up", () => {
+    test("Then it should display a modal with the bill proof", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname })
       }
@@ -71,7 +70,7 @@ describe("Given I am connected as an employee", () => {
   })
 
   describe("When I click on new bill button", () => {
-    test("It should render new bill page", () => {
+    test("Then it should render new bill page", () => {
       const onNavigate = (pathname) => {
         document.body.innerHTML = ROUTES({ pathname })
       }
@@ -93,7 +92,7 @@ describe("Given I am connected as an employee", () => {
 // Integration test GET
 describe("Given I am a user connected as Employee", () => {
   describe("When I navigate to bill page", () => {
-    test("fetches bills from mock API GET", async () => {
+    test("Then it should fetches bills from mock API GET", async () => {
       localStorage.setItem("user", JSON.stringify({ type: "Employee" }));
       const root = document.createElement("div")
       root.setAttribute("id", "root")
@@ -122,7 +121,7 @@ describe("Given I am a user connected as Employee", () => {
       document.body.appendChild(root)
       router()
     })
-      test("fetches bills from an API and fails with 404 message error", async () => {
+      test("Then it should fetches bills from an API and fails with 404 message error", async () => {
         mockStore.bills.mockImplementationOnce(() => {
           return {
             list : () =>  {
@@ -135,7 +134,7 @@ describe("Given I am a user connected as Employee", () => {
         expect(message).toBeTruthy()
       })
 
-      test("fetches messages from an API and fails with 500 message error", async () => {
+      test("Then it should fetches messages from an API and fails with 500 message error", async () => {
         mockStore.bills.mockImplementationOnce(() => {
           return {
             list : () =>  {
