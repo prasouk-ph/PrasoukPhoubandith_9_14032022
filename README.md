@@ -47,7 +47,7 @@ The front-end need the back-end API, to use it, you need to :
 
 It will run in port 5678
 
-2- Launch the front-end with: `npm start`
+2- Launch the front-end with a live server
 
 Because of back-end running, you will encounter a message from the terminal 'Would you like to run the app on another port instead?' , choose 'yes' to run the front in another port
 
