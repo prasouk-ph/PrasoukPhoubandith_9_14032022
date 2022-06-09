@@ -1,94 +1,68 @@
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 
-## L'architecture du projet :
-Ce projet, dit frontend, est connecté à un service API backend que vous devez aussi lancer en local.
+# Billed
 
-Le projet backend se trouve ici: https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back
+Billed is an application allowing to track manage expenses claims.
 
-## Organiser son espace de travail :
-Pour une bonne organization, vous pouvez créer un dossier bill-app dans lequel vous allez cloner le projet backend et par la suite, le projet frontend:
+For this project, I fixed some bugs and write tests for NewBill.js and Bills.js
 
-Clonez le projet backend dans le dossier bill-app :
-```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
-```
+## Technologies and dependencies
 
-```
-bill-app/
-   - Billed-app-FR-Back
-```
+-   HTML
+-   CSS
+-   Javascript
+-   [Express](https://expressjs.com/) (v4.17.1)
+-   [Global](https://github.com/rohit062/global-node#readme) (v4.4.0)
+-   [jQuery](https://jquery.com/) (v3.5.1)
+-   [Path](https://nodejs.org/docs/latest/api/path.html) (v0.12.7)
 
-Clonez le projet frontend dans le dossier bill-app :
-```
-$ git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Front.git
-```
+## Prerequisites
 
-```
-bill-app/
-   - Billed-app-FR-Back
-   - Billed-app-FR-Front
-```
+-   Git
+-   Node
 
-## Comment lancer l'application en local ?
+## Installation
 
-### étape 1 - Lancer le backend :
+To be able to use the application, you will need to install the back-end and the front-end
 
-Suivez les indications dans le README du projet backend.
+#### Front-end
 
-### étape 2 - Lancer le frontend :
+1- Clone this repository on your system :
+`git clone https://github.com/prasouk-ph/PrasoukPhoubandith_9_14032022.git`
 
-Allez au repo cloné :
-```
-$ cd Billed-app-FR-Front
-```
+2- Open a terminal in the project : `cd PrasoukPhoubandith_9_14032022`
 
-Installez les packages npm (décrits dans `package.json`) :
-```
-$ npm install
-```
+3- Install dependencies with : `npm install`
 
-Installez live-server pour lancer un serveur local :
-```
-$ npm install -g live-server
-```
+#### Back-end
 
-Lancez l'application :
-```
-$ live-server
-```
+Follow instructions on :
+`https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-back`
 
-Puis allez à l'adresse : `http://127.0.0.1:8080/`
+## How to run
 
+The front-end need the back-end API, to use it, you need to :
 
-## Comment lancer tous les tests en local avec Jest ?
+1- Launch the back-end first with: `npm run run:dev`
+
+It will run in port 5678
+
+2- Launch the front-end with: `npm start`
+
+Because of back-end running, you will encounter a message from the terminal 'Would you like to run the app on another port instead?' , choose 'yes' to run the front in another port
+
+You can log in with these accounts:
 
 ```
-$ npm run test
+user: admin@test.tld
+passwords: admin
 ```
 
-## Comment lancer un seul test ?
-
-Installez jest-cli :
-
 ```
-$npm i -g jest-cli
-$jest src/__tests__/your_test_file.js
+user: employee@test.tld
+passwords: employee
 ```
 
-## Comment voir la couverture de test ?
+## Authors
 
-`http://127.0.0.1:8080/coverage/lcov-report/`
-
-## Comptes et utilisateurs :
-
-Vous pouvez vous connecter en utilisant les comptes:
-
-### administrateur : 
-```
-utilisateur : admin@test.tld 
-mot de passe : admin
-```
-### employé :
-```
-utilisateur : employee@test.tld
-mot de passe : employee
-```
+-   Prasouk
